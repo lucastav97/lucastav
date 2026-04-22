@@ -1,0 +1,618 @@
+/* ESTILO GERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: black;
+    min-height: 100vh;
+}
+
+.flex {
+    Display: flex;
+}
+
+.interface {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.btn-contato button {
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #fd7736;
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+button:hover,
+form .btn-enviar input:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 8px #fd7736;
+}
+
+h2.titulo {
+    color: #ffffff;
+    font-size: 38px;
+    text-align: center;
+}
+
+h2.titulo span {
+    color: #fd7736;
+    font-size: 38px;
+    text-align: center;
+}
+
+section {
+    scroll-margin-top: 120px;
+}
+
+/* ESTILO DO CABEÇALHO */
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: black;
+    /* importante */
+    z-index: 1000;
+    padding: 30px 4%;
+    transition: 0.3s;
+}
+
+header.scrolled {
+    padding: 10px 4%;
+    box-shadow: 0 0 10px #fd78368e;
+}
+
+header.scrolled .logo_header {
+    width: 80px;
+    height: auto;
+}
+
+.logo_header {
+    width: 120px;
+    height: auto;
+    transition: 0.3s;
+}
+
+.nome-logo {
+    padding: 0 20px;
+    display: inline-block;
+    animation: sumir1 6s infinite;
+}
+
+header .nome-logo h1 {
+    color: white;
+    overflow: hidden;
+    border-right: 2px solid #ffffff;
+    white-space: nowrap;
+    width: 0;
+    animation: digitaçãoLoop 12s steps(13) infinite;
+}
+
+header .nome-logo span {
+    color: #fd7736;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* espaço entre logo e nome */
+    justify-content: center;
+    /* 👈 centraliza horizontal */
+}
+
+ /* Estilização menu mobile */
+
+.menu-mobile{
+    background-color: #000000f3;
+    position: absolute;
+    top: 105px;
+    left: 150px;
+    width: 100%;
+    height: 100vh;
+    display: none;
+}
+
+.menu-mobile a{
+    color: #ffffff; 
+    text-decoration: none;
+    display: block;
+    font-size: 16pt;
+}
+
+.menu-mobile a:hover{
+    transform: none;
+    color: #fd7736;
+}
+
+.menu-mobile ul {
+    display: flex;
+    flex-direction: column;
+}
+
+
+header .menu-mobile ul li {
+    display: block;
+    padding: 20px 30px;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-toggle .bar {
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff;
+    transition: 0.3s ease;
+    transform-origin: center;
+}
+
+@keyframes digitaçãoLoop {
+
+    0% {
+        width: 0;
+    }
+
+    40% {
+        width: 100%;
+        /* terminou de digitar */
+    }
+
+    90% {
+        width: 100%;
+        /* fica 5s parado */
+    }
+
+    100% {
+        width: 0;
+        /* apaga */
+    }
+}
+
+header>.interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a {
+    font-size: 20px;
+    color: #7d7d7d;
+    text-decoration: none;
+    display: inline-block;
+    /* Necessário para que o link receba as propriedades que permite os efeitos de zoom */
+}
+
+header a:hover {
+    /* Aplicar quando passar mouse em cima */
+    color: #ffffff;
+    transform: scale(1.3);
+    /* Efeito de zoom no botão */
+    transition: .2s;
+}
+
+header nav ul {
+    list-style-type: none;
+}
+
+header nav ul li {
+    display: inline-block;
+    padding: 0 40px;
+
+}
+
+@media screen and (max-width: 1348px) {
+    .nome-logo {
+        font-size: 16px;
+    }
+}
+
+body.menu-open header { /* TRAVAR HEADER QUANDO MENU ABERTO */
+    padding: 30px 4%;
+    box-shadow: none;
+}
+
+
+body.menu-open {  /*impedir scroll da página */
+    overflow: hidden;
+}
+
+body.menu-open header.scrolled .logo_header {
+    width: 58px;
+}
+
+/* ESTILO TOPO DO SITE */
+
+section.topo-do-site {
+    padding: 40px 4%;
+}
+
+.img-topo-site img {
+    width: 650px;
+    height: auto;
+}
+
+section.topo-do-site .flex {
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+}
+
+.topo-do-site .txt-topo-site h1 {
+    color: #ffffff;
+    font-size: 42px;
+    line-height: 40px;
+}
+
+.topo-do-site .txt-topo-site h1 span {
+    color: #fd7736;
+    font-size: 42px;
+    line-height: 40px;
+}
+
+.topo-do-site .txt-topo-site p {
+    color: #ffffff;
+    margin: 40px 0;
+}
+
+.topo-do-site .img-topo-site img {
+    position: relative;
+    animation: flutuar 2s ease-in-out infinite alternate;
+}
+
+@keyframes flutuar {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: 30px;
+    }
+}
+
+/* ESTILO DAS HABILIDADES */
+section.habilidades {
+    padding: 40px 4%;
+}
+
+section.habilidades .flex {
+    gap: 60px;
+}
+
+.habilidades .habilidades-box {
+    color: #ffffff;
+    padding: 40px;
+    border: 2px solid #ffffff;
+    margin-top: 45px;
+    border-radius: 20px;
+    transition: .2s;
+}
+
+.habilidades .habilidades-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #fd7836;
+}
+
+.habilidades .habilidades-box i {
+    font-size: 70px;
+}
+
+.habilidades .habilidades-box h3 {
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+/* ESTILO DO SOBRE */
+
+.sobre .img-sobre img {
+    width: 360px;
+    height: auto;
+    border-radius: 30px;
+    border: 2px solid #ffffff;
+}
+
+.sobre .img-sobre img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #fd7836;
+}
+
+section.sobre {
+    padding: 80px 4%;
+}
+
+section.sobre .flex {
+    align-items: center;
+    gap: 60px;
+}
+
+.sobre .txt-sobre {
+    color: #ffffff;
+}
+
+.sobre .txt-sobre h2 {
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 20px;
+}
+
+.sobre .txt-sobre h2 span {
+    color: #fd7736;
+    display: block;
+}
+
+.sobre .txt-sobre p {
+    margin: 15px 0px;
+    text-align: justify;
+}
+
+.btn-social button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border-color: #fd7736;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 0px 5px;
+    transition: .2s;
+}
+
+/* ESTILO DO PORTFÓLIO */
+
+section.portfólio {
+    padding: 40px 4%;
+    box-shadow: 0 0 40px 10px #ffffff13;
+}
+
+.img-port {
+    width: 360px;
+    height: 460px;
+    background-color: #fd7736;
+    background-size: cover;
+    background-position: 100% 0%;
+    /*Eixo horizontal e eixo vertical*/
+    transition: 5s;
+    cursor: pointer;
+    border-radius: 40px;
+    position: relative;
+    /*Ocupa o espaço normal, mas pode ser mover um pouco usando top/left/right/bottom*/
+}
+
+.img-port:hover {
+    background-position: 100% 100%;
+}
+
+section.portfólio .flex {
+    gap: 60px;
+    margin-top: 60px;
+}
+
+.overlay {
+    position: absolute;
+    /*Sai do fluxo normal da pag. e pode ser colocado em qlqr lugar*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    background-color: #00000094;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffffff;
+    opacity: 0;
+    transition: .5s;
+}
+
+.overlay:hover {
+    opacity: 1;
+}
+
+/* ESTILO DO FORMULÁRIO */
+
+section.formulario {
+    padding: 80px 4%;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    background-color: #3f3f3f;
+    border: 0;
+    outline: 0;
+    padding: 20px 15px;
+    font-size: 18px;
+    color: #ffffff;
+    border-radius: 15px;
+}
+
+form textarea {
+    resize: none;
+    max-height: 200px;
+}
+
+form .btn-enviar {
+    margin-top: 20px;
+    text-align: center;
+}
+
+form .btn-enviar input {
+    width: 120px;
+    background-color: #fd7736;
+    font-weight: 700;
+    color: #000000;
+    cursor: pointer;
+    transition: .2s;
+}
+
+/* ESTILO FOOTER */
+
+footer {
+    padding: 40px 4%;
+    box-shadow: 0 0 40px 10px #ffffff13;
+}
+
+.line-footer {
+    padding: 20px 0;
+}
+
+.borda {
+    border-top: 2px solid #fd7736;
+}
+
+.logo-footer img {
+    width: 60px;
+    height: auto;
+    margin-right: 10px;
+}
+
+footer .line-footer p i {
+    color: #fd7736;
+    font-size: 22px;
+}
+
+footer .line-footer p a {
+    color: #ffffff;
+}
+
+@media screen and (max-width: 1150px) {
+
+    /*Classe gerais*/
+    .topo-do-site .flex {
+        flex-direction: column-reverse;
+    }
+
+    footer .flex {
+        flex-direction: row;
+    }
+
+    .flex {
+        flex-direction: column;
+    }
+
+    h2.titulo {
+        font-size: 30px;
+        line-height: 35px;
+    }
+
+    /* Cabeçalho */
+    .menu-desktop,
+    .btn-contato {
+        display: none;
+    }
+
+    /* Topo do site */
+    section.topo-do-site .flex {
+        gap: 40px;
+    }
+
+    section.topo-do-site {
+        padding: 20px 8%;
+    }
+
+    .topo-do-site h1 {
+        font-size: 30px;
+    }
+
+    .img-topo-site img {
+        width: 400px;
+        height: auto;
+    }
+
+    /* Habilidades */
+
+    section.habilidades .flex {
+    gap: 0px;
+    }
+
+    /* Sobre */
+    .sobre .img-sobre img {
+        width: 280px;
+    }
+
+    section.sobre {
+        padding: 40px 8%;
+    }
+
+    .sobre .txt-sobre h2 {
+        font-size: 35px;
+        line-height: 35px;
+        text-align: center;
+    }
+
+    .sobre .txt-sobre span {
+        font-size: 40px;
+    }
+
+    /* Portifolio */
+    section.portfólio {
+        padding: 80px 8%;
+    }
+
+    .img-port {
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    section.portfólio .flex {
+        gap: 20px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu-mobile {
+        display: none; /* começa fechado */
+    }
+
+    .menu-mobile.active {
+        display: block; /* abre */
+    }
+
+}
+
+/* ANIMAÇÃO DO HAMBURGUER PARA X */
+.menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* garante suavidade */
+.menu-toggle .bar {
+    transition: 0.3s ease;
+}
